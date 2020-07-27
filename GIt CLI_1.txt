@@ -1,0 +1,21 @@
+git init -> 깃을 초기화
+ls -al -> 어떤 파일이 있는지 알려줌
+nano -> 파일 추가
+cat -> 파일의 정보를 출력해줌
+
+* 버전관리
+
+Working tree(수정한 파일들, 작업공간) Staging Area(버전을 만들 파일들) Repository(만들어진 버전)
+
+=> Working tree에 작업한 파일들이 Staging Area에 들어가고 그 정보들을 Repository에 저장된다. 
+
+Git은 버전에 필요한 파일을 최초 한번 알려줘야 버전관리를 해준다. 
+관리해주지 않으면 Untracked file로 분류된다.
+
+git add (파일명.파일형식) => 버전관리할 파일을 깃에게 알려줌, Staging Area에 올려준다.
+
+git commit (") => 버전을 제출한다. (제출한 버전에 대한 설명을 위해 뒤에 -m (내용)을 추가한다) 버전을 Repository에 올린다. 올리는 순간 git 상태는 Working tree가 clean하며 commit할 것이 없다고 나온다.
+
+git log => 버전의 역사를 보여준다. (--stat) (-p)
+
+git diff => 버전에서 바뀐 내용이 무엇인지 자세히 보여준다.

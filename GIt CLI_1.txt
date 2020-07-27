@@ -13,9 +13,24 @@ Git은 버전에 필요한 파일을 최초 한번 알려줘야 버전관리를 
 관리해주지 않으면 Untracked file로 분류된다.
 
 git add (파일명.파일형식) => 버전관리할 파일을 깃에게 알려줌, Staging Area에 올려준다.
+git add . => 현재 디렉토리 밑에있는 모든 파일을 add해줌
 
 git commit (") => 버전을 제출한다. (제출한 버전에 대한 설명을 위해 뒤에 -m (내용)을 추가한다) 버전을 Repository에 올린다. 올리는 순간 git 상태는 Working tree가 clean하며 commit할 것이 없다고 나온다.
 
 git log => 버전의 역사를 보여준다. (--stat) (-p)
 
 git diff => 버전에서 바뀐 내용이 무엇인지 자세히 보여준다.
+
+git checkout (ID) => git 버전을 만든 ID의 시점으로 되돌아간다.
+git checkout master를 하면 최신 상태로 되돌아감
+
+git commit -am => add와 commit을 한꺼번에 해준다. 하지만 최초로 한번 add를 해주지 않은 파일은 am이 적용되지 않는다.
+
+git reset --hard (ID) => 원하는 ID의 버전으로 (돌아가겠다X)되겠다.
+--hard => 강력하게 지운다. 버전과 수정하는 내용도 지운다.
+--soft, --mixed => 수정하는 내용은 지우지 않는다.
+
+git revert => 기존의 커밋은 내버려두면서 이 커밋에서의 변화를 취소한다.
+R1 R2 R3 R4로 커밋이 있으면 revert R4는 R3 내용의 새로운 버전이 생긴다.
+만약 R1의 내용으로 revert 되려면 역으로 순차적인 revert를 해야 충돌이 생기지 않고 revert 할 수 있다. (바로 해버리면 R4, R3 내용이 유실될 수 있다.)
+

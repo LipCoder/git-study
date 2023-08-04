@@ -1,1 +1,5 @@
-This i123564<><><Lffjfjfjfj213s test
+<<<<<<< HEAD
+this is origin
+=======
+this is remote
+>>>>>>>
